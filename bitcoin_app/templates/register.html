@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'assets/css/login.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/footer.css' %}" />
+    <link rel="stylesheet" href="{%static 'assets/css/nav.css' %}" />
+
+    <title>Degentralizd</title>
+  </head>
+  <body>
+     <!-- NAVBAR -->
+     <nav class="top-nav" id="topNav">
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <a href="{% url 'home' %}">
+        <p class="logo">Degentralizd</p>
+      </a>
+      
+    
+      <ul class="menu" id="menu">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'home' %}">How It Works</a></li>
+        <li><a href="{% url 'home' %}">What We Do</a></li>
+        
+        <li>
+          <a href="{% url 'signin' %}">
+            <button class="login-btn">Buy now</button>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="login-section">
+      <p class="login-header">Sign Up to Degentralizd</p>
+      <form class="login-form" method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <h2>Register</h2>
+        
+    
+        <div class="input-group">
+            <label for="{{ form_name.id_for_label }}">Username:</label>
+            {{ form_name }}
+        </div>
+    
+        <div class="input-group">
+            <label for="{{ form_password1.id_for_label }}">Password:</label>
+            {{ form_password1 }}
+        </div>
+    
+        <div class="input-group">
+            
+            <label for="{{ form_password2.id_for_label }}">Confirm Password:</label>
+            {{ form_password2 }}
+            
+        </div>
+    
+        <button type="submit">Register</button>
+        <a id="forgot-password" href="{% url 'signin' %}">Already have an account? Sign In</a>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="upper-part grid-container">
+          <div class="grid-item">
+            <h3>Degentralizd</h3>
+            <p>Connect our AI to your exchange account and mine crypto and airdrops automatically.</p>
+          </div>
+          <div class="grid-item">
+            <h4>Contact us</h4>
+            <p>Email:alex@company.com</p>
+          </div>
+          <div class="grid-item">
+            <h4>Sign up for email updates</h4>
+            <input type="email" placeholder="Enter your email address" />
+            <p>Sign up with your email address to receive news and updates</p>
+          </div>
+        </div>
+        <div class="lower-part"></div>
+      </div>
+      <div class="bottom-footer">
+        <div class="footer-left">
+          <p>&copy;Degentralizd. All rights reserved.</p>
+        </div>
+        
+      </div>
+    </footer>
+    <script src="{%static 'assets/js/script.js' %}"></script>
+  </body>
+</html>

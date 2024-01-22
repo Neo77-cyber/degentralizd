@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Degentralizd</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="{%static 'assets/css/dashboard.css' %}" />
+  </head>
+
+  <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="logo-apple"></ion-icon>
+              </span>
+              <span class="title">Degentralizd</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'portfolio' %}">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title dashboard-title">Dashboard</span>
+            </a>
+          </li>
+
+
+          
+
+          <li>
+            <a href="{% url 'buy_crypto' %}">
+              <span class="icon">
+                <ion-icon name="card"></ion-icon>
+              </span>
+              <span class="title">Buy and Sell Crypto</span>
+            </a>
+          </li>
+
+          
+
+          <li>
+            <a href="{% url 'how_it_works' %}">
+              <span class="icon">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </span>
+              <span class="title">How It Works</span>
+            </a>
+          </li>
+
+         
+
+          <li>
+            <a href="{% url 'support' %}">
+              <span class="icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+              </span>
+              <span class="title">Support</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'logout' %}">
+              <span class="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+
+          
+          {% for balance in portfolio %}
+
+          <div class="user">
+            <img src="{{balance.imageURL}}" alt="" />
+          </div>
+        </div>
+
+        <!-- ==================== Page Header ================== -->
+        <div class="pageHeader">
+          <h2>Welcome {{user.username}}</h2>
+          
+        </div>
+        
+        
+        <!-- ======================= Cards ================== -->
+        <div class="cardBox">
+          <div class="card">
+            <div>
+              <div class="numbers">{{balance.btc_total}} BTC</div>
+              <div class="cardName">Wallet ฿BTC balance</div>
+            </div>
+
+            <div class="iconBx">
+              <ion-icon name="logo-bitcoin"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">{{balance.eth_total}} $ALT</div>
+              <div class="cardName">Wallet $ALT balance</div>
+            </div>
+
+            <div class="iconBx">
+              <ion-icon name="logo-bitcoin"></ion-icon>
+            </div>
+          </div>
+
+          <div class="card">
+            <div>
+              <div class="numbers">{{balance.ltc_total}} $ORDS </div>
+              <div class="cardName">Wallet $ORDS balance</div>
+            </div>
+
+            <div class="iconBx">
+              <ion-icon name="logo-bitcoin"></ion-icon>
+            </div>
+          </div>
+          {% endfor %}
+
+          <!-- <div class="card">
+            <div>
+              <div class="numbers">$7,842</div>
+              <div class="cardName">Earning</div>
+            </div>
+
+            <div class="iconBx">
+              <ion-icon name="cash-outline"></ion-icon>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="semiDetails">
+          <div class="image-bannar-advert">
+            <img src="{%static 'assets/img/dashboard/bitcoin-3024279_1920.jpg' %}" alt="" />
+          </div>
+
+          
+          <div id="recentTransactions">
+            <h2>Recent Transactions</h2>
+            <table>
+              <thead>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01/01/2024</td>
+                  <td>0xsD12F32xvW3deG5...</td>
+                  <td>$1000</td>
+                  <td>BTC</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ================ Order Details List ================= -->
+        <div class="details">
+          <!-- ======== Transfer Coins ======== -->
+
+          <div class="buy-crypto-card">
+            <p><span>$500</span> - <span> $3,200</span></p>
+            <h2>Market Analysis</h2>
+            <a href="{% url 'buy_crypto' %}">
+              <button id="buy-crypto-button">Buy Now</button>
+            </a>
+          </div>
+
+          <div class="buy-crypto-card">
+            <p><span>$4,000</span> - <span> $7,562</span></p>
+            <h2>Trading Signals</h2>
+            <a href="{% url 'buy_crypto' %}">
+              <button id="buy-crypto-button">Buy Now</button>
+            </a>
+          </div>
+
+          <div class="buy-crypto-card">
+            <p><span>$8,000</span> - <span> $10,000</span></p>
+            <h2>Backtesting</h2>
+            <a href="{% url 'buy_crypto' %}">
+              <button id="buy-crypto-button">Buy Now</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="{%static 'assets/js/dashboard.js' %}"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

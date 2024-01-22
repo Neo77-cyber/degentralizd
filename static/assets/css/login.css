@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "inter", sans-serif;
+}
+
+.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7rem 0;
+  background: linear-gradient(
+      217deg,
+      rgba(252, 248, 238, 1),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(237, 246, 239, 1), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(235, 240, 252, 1), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.login-header {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: left;
+  padding-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 400px;
+  padding: 40px;
+  background-color: #eff7ef;
+  border-radius: 10px;
+  color: #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.login-form h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+  font-size: 1.6rem;
+
+  &:focus {
+    background-color: #ffffff;
+  }
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00cc66;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+.login-form button:hover {
+  background-color: #00994d;
+}
+.login-form a {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+  color: #00994d;
+  font-size: 14px;
+}
+@media screen and (max-width: 748px) {
+  .login-form {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .signin-section .signin {
+    width: 100%;
+    padding: 40px;
+  }
+}
