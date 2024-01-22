@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserForm
-from .models import Portfolio
+from .models import Portfolio, Transactions
 
 
 # Create your views here.
@@ -66,8 +66,13 @@ def portfolio(request):
 
 @login_required
 def buy_crypto(request):
+    log_user = request.user
+
+    # Check if the user is authenticated before filtering the Portfolio model
     
-    return render(request, 'buy-sell-crypto.html')
+
+    
+    return render(request, 'buy-sell-crypto.html',)
 
 @login_required
 def how_it_works(request):

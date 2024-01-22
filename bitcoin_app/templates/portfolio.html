@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -115,8 +116,8 @@
 
           <div class="card">
             <div>
-              <div class="numbers">{{balance.eth_total}} $ALT</div>
-              <div class="cardName">Wallet $ALT balance</div>
+              <div class="numbers">$ {{balance.eth_total|intcomma}} </div>
+              <div class="cardName">Wallet Balance</div>
             </div>
 
             <div class="iconBx">
@@ -127,14 +128,14 @@
           <div class="card">
             <div>
               <div class="numbers">{{balance.ltc_total}} $ORDS </div>
-              <div class="cardName">Wallet $ORDS balance</div>
+              <div class="cardName">Wallet airdop balance</div>
             </div>
 
             <div class="iconBx">
               <ion-icon name="logo-bitcoin"></ion-icon>
             </div>
           </div>
-          {% endfor %}
+          
 
           <!-- <div class="card">
             <div>
@@ -156,19 +157,22 @@
           
           <div id="recentTransactions">
             <h2>Recent Transactions</h2>
+          
             <table>
               <thead>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>01/01/2024</td>
-                  <td>0xsD12F32xvW3deG5...</td>
-                  <td>$1000</td>
+                  <td>{{balance.transaction_date}}</td>
+                  <td>{{balance.transaction_ash}}</td>
+                  <td>${{balance.amount|intcomma}}</td>
                   <td>BTC</td>
                 </tr>
               </tbody>
             </table>
+            {% endfor %}
+            
           </div>
         </div>
 
@@ -178,7 +182,7 @@
 
           <div class="buy-crypto-card">
             <p><span>$500</span> - <span> $3,200</span></p>
-            <h2>Market Analysis</h2>
+            <h2>AI Market Analysis plan</h2>
             <a href="{% url 'buy_crypto' %}">
               <button id="buy-crypto-button">Buy Now</button>
             </a>
@@ -186,7 +190,7 @@
 
           <div class="buy-crypto-card">
             <p><span>$4,000</span> - <span> $7,562</span></p>
-            <h2>Trading Signals</h2>
+            <h2>AI Trading Signals plan</h2>
             <a href="{% url 'buy_crypto' %}">
               <button id="buy-crypto-button">Buy Now</button>
             </a>
@@ -194,7 +198,7 @@
 
           <div class="buy-crypto-card">
             <p><span>$8,000</span> - <span> $10,000</span></p>
-            <h2>Backtesting</h2>
+            <h2>AI Backtesting plan</h2>
             <a href="{% url 'buy_crypto' %}">
               <button id="buy-crypto-button">Buy Now</button>
             </a>
