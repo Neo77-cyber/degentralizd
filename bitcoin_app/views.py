@@ -84,6 +84,11 @@ def support(request):
     
     return render(request, 'support.html')
 
+@login_required
+def withdraw(request):
+    
+    return render(request, 'withdraw.html')
+
 
 def logout(request):
     auth.logout(request)

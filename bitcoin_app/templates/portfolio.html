@@ -46,6 +46,15 @@
             </a>
           </li>
 
+          <li>
+            <a href="{% url 'withdraw' %}">
+              <span class="icon">
+                <ion-icon name="card"></ion-icon>
+              </span>
+              <span class="title">Wallet Withdraw</span>
+            </a>
+          </li>
+
           
 
           <li>
@@ -89,14 +98,25 @@
           
           {% for balance in portfolio %}
 
-          <div class="user">
-            <img src="{{balance.imageURL}}" alt="" />
-          </div>
+          
         </div>
 
         <!-- ==================== Page Header ================== -->
         <div class="pageHeader">
           <h2>Welcome {{user.username}}</h2>
+          <style>
+            .child-1 {
+              margin-top: 10px;
+            }
+            .child-1 a {
+              text-decoration: none; /* Remove underline */
+              color: blue; /* Set text color to black */
+              
+            }
+          </style>
+          <div class="child-1">
+             <p>Click <a href="{% url 'how_it_works' %}">here</a> to learn how it works</p>
+          </div>
           
         </div>
         
@@ -182,7 +202,7 @@
 
           <div class="buy-crypto-card">
             <p><span>$500</span> - <span> $3,200</span></p>
-            <h2>AI Market Analysis plan</h2>
+            <h2>Starter Plan</h2>
             <a href="{% url 'buy_crypto' %}">
               <button id="buy-crypto-button">Buy Now</button>
             </a>
@@ -190,7 +210,7 @@
 
           <div class="buy-crypto-card">
             <p><span>$4,000</span> - <span> $7,562</span></p>
-            <h2>AI Trading Signals plan</h2>
+            <h2>Basic Plan</h2>
             <a href="{% url 'buy_crypto' %}">
               <button id="buy-crypto-button">Buy Now</button>
             </a>
@@ -198,7 +218,7 @@
 
           <div class="buy-crypto-card">
             <p><span>$8,000</span> - <span> $10,000</span></p>
-            <h2>AI Backtesting plan</h2>
+            <h2>Pro Plan</h2>
             <a href="{% url 'buy_crypto' %}">
               <button id="buy-crypto-button">Buy Now</button>
             </a>

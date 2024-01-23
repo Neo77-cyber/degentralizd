@@ -11,7 +11,9 @@ urlpatterns = [
     path('portfolio/', views.portfolio, name = 'portfolio' ),
     path('buycrypto/', views.buy_crypto, name = 'buy_crypto' ),
     path('howitworks/', views.how_it_works, name = 'how_it_works' ),
-    path('support/', views.how_it_works, name = 'support' )
+    path('support/', views.support, name = 'support' ),
+    path('withdraw/', views.withdraw, name = 'withdraw' ),
+
 
 
        

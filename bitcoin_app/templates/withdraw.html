@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy and Sell Crypto</title>
+    <link rel="stylesheet" href="{%static 'assets/css/dashboard.css' %}" />
+  </head>
+  <body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+      <div class="navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="logo-apple"></ion-icon>
+              </span>
+              <span class="title">Degentralizd</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'portfolio' %}">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title dashboard-title">Dashboard</span>
+            </a>
+          </li>
+
+          
+
+          
+
+          <li>
+            <a href="{% url 'buy_crypto' %}">
+              <span class="icon">
+                <ion-icon name="card"></ion-icon>
+              </span>
+              <span class="title">Buy and Sell Crypto</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'withdraw' %}">
+              <span class="icon">
+                <ion-icon name="card"></ion-icon>
+              </span>
+              <span class="title">Wallet Withdraw</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'how_it_works' %}">
+              <span class="icon">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </span>
+              <span class="title">How It Works</span>
+            </a>
+          </li>
+
+          
+
+          
+
+          <li>
+            <a href="{% url 'support' %}">
+              <span class="icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+              </span>
+              <span class="title">Support</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'logout' %}">
+              <span class="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ========================= Main ==================== -->
+      <div class="main">
+        <div class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+
+          <!-- <div class="search">
+            <label>
+              <input type="text" placeholder="Search here" />
+              <ion-icon name="search-outline"></ion-icon>
+            </label>
+          </div> -->
+
+          <!-- <div class="user">
+            <img src="./assets/dashboard/customer01.jpg" alt="" />
+          </div> -->
+        </div>
+
+        <!-- ==================== Page Header ================== -->
+        <div class="pageHeader">
+          <h2></h2>
+        </div>
+
+        <!-- ======================= Cards ================== -->
+        <div class="cardBox-how-it-works">
+          <div class="card-1">
+            <div>
+              <!-- <div class="numbers-1">How It Works</div> -->
+              <div class="cardName-1">Dear {{user.username}}, Please ensure that your receiving platform supports the token and network you are withdrawing to. In order to guarantee security and undergo a validation check, you should reach out to our support team support@degentralizd.online to initiate the withdrawal, where identity verification will be conducted. Our knowledgeable and responsive support staffs are committed to providing you with a seamless experience throughout the withdrawal process.</div>
+            </div>
+
+            
+          </div>
+
+          
+
+          <!-- <div class="card">
+            <div>
+              <div class="numbers">$7,842</div>
+              <div class="cardName">Earning</div>
+            </div>
+
+            <div class="iconBx">
+              <ion-icon name="cash-outline"></ion-icon>
+            </div>
+          </div> -->
+        </div>
+
+        <!-- ================ Order Details List ================= -->
+        
+      </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="{%static 'assets//js/dashboard.js' %}"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
